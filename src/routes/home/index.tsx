@@ -60,7 +60,7 @@ const Home: FunctionalComponent = () => {
         On PowerCord,...
         <ol>
           <li>
-            Download the .zip file by going
+            Download the .zip file by going{' '}
             <a
               href="#/api/pc"
               onClick={() => (document.location.href = '/api/pc')}
