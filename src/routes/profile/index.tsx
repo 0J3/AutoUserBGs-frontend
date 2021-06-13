@@ -10,7 +10,14 @@ class ProfileContent extends Component<{
   authCode: string;
   authTokenType: string;
 }> {
-  render() {
+  async render() {
+    const user = await fetch(
+      '/api/whoamireally?auth=' +
+        this.props.authTokenType +
+        ' ' +
+        this.props.authCode,
+      {}
+    );
     return <div></div>;
   }
 }
@@ -38,10 +45,10 @@ const Profile: FunctionalComponent<Props> = (props: Props) => {
   const acode = localStorage.getItem('AUTH_CODE');
   const att = localStorage.getItem('AUTH_TOKEN_TYPE');
 
-  if (acode && att)
+  if (acode)
     return (
       <div class={style.profile}>
-        <ProfileContent authCode={acode} authTokenType={att} />
+        <ProfileContent authCode={acode} authTokenType={att || 'Bearer'} />
       </div>
     );
   else {
