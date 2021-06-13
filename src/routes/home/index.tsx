@@ -28,14 +28,15 @@ const Home: FunctionalComponent = () => {
         AUBG does not require you to wait to get a user background
         added/updated.
       </p>
-      <h2>Do I need to import UsrBGs aswell?</h2>
-      <p>
-        No. AutoUsrBGs'{' '}
-        <a href="https://0j3-2.github.io/AutoUserBGs/publicvars.css">
-          Variables importer file
-        </a>{' '}
-        already imports it for you.
-      </p>
+      <h2>Example</h2>
+      <img
+        src="https://cdn.discordapp.com/attachments/683385530528039165/853671336064581662/unknown.png"
+        alt="EXAMPLE1"
+      />
+      <img
+        src="https://cdn.discordapp.com/attachments/683385530528039165/853671368621293578/unknown.png"
+        alt="EXAMPLE2"
+      />
       <h2>How do I install AutoUsrBGs?</h2>
       <p>
         On Bandagedbd,...
@@ -138,6 +139,14 @@ const Home: FunctionalComponent = () => {
             beginning of your theme file
           </li>
         </ol>
+      </p>
+      <h2>(Theme Creators) Do I need to import UsrBGs aswell?</h2>
+      <p>
+        No. AutoUsrBGs'{' '}
+        <a href="https://0j3-2.github.io/AutoUserBGs/publicvars.css">
+          Variables importer file
+        </a>{' '}
+        already imports it for you.
       </p>
       <h2>(Developers) How do I get a JSON list of user-settings?</h2>
       <p>
