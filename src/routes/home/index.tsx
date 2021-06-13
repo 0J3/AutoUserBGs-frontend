@@ -20,8 +20,8 @@ const Home: FunctionalComponent = () => {
         AutoUserBGs (also refrenced as: aubg,aubgs,autousrbgs) is a Pure CSS
         Database, similar to{' '}
         <a href="https://github.com/Discord-Custom-Covers/usrbg/">usrbg</a> by
-        Tropical#4355, of user-selected backgrounds. The difference being, there
-        is no human other than you, when it comes to approving backgrounds.
+        Tropical#4355, of user-selected backgrounds. The difference being,
+        no-one needs to approve a background for it to be added.
       </p>
       <h2>Why AutoUsrBGs?</h2>
       <p>
