@@ -43,7 +43,7 @@ const Home: FunctionalComponent = () => {
         On Bandagedbd,...
         <ol>
           <li>
-            Download the .theme.css file by going
+            Download the .theme.css file by going{' '}
             <a
               href="#/api/bd"
               onClick={() => (document.location.href = '/api/bd')}
@@ -62,17 +62,17 @@ const Home: FunctionalComponent = () => {
           <li>
             Download the .zip file by going
             <a
-              href="#/api/bd"
-              onClick={() => (document.location.href = '/api/bd')}
+              href="#/api/pc"
+              onClick={() => (document.location.href = '/api/pc')}
             >
               here
             </a>{' '}
             and pressing ctrl+s
           </li>
-          <li>Open your User Settings on Discord</li>
-          <li>Click Themes</li>
-          <li>Click Open Themes Folder</li>
-          <li>Move the file you downloaded in the opened folder</li>
+          <li>
+            Install a theme however you otherwise would, using the folder inside
+            of the zip
+          </li>
         </ol>
       </p>
       <h2>How do I setup my own background?</h2>
