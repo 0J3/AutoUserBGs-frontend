@@ -87,7 +87,7 @@ const Home: FunctionalComponent = () => {
         accounts. I do not keep your email address anywhere on my server.
         <br />
         If you want to confirm that claim yourself, this whole site's source
-        code, inclusive the part that would save said email, can be found
+        code, inclusive the part that would save said email, can be found{' '}
         <a href="https://nora.lgbt/goto/gh/0J3/AutoUserBGs-frontend">
           here
         </a>{' '}
