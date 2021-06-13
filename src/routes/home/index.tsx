@@ -93,7 +93,7 @@ const Home: FunctionalComponent = () => {
         </a>{' '}
         and <a href="https://nora.lgbt/goto/gh/0J3/AutoUserBGsBackend">here.</a>
       </p>
-      <h2>(Developers) How do I get a JSON list of user-settings</h2>
+      <h2>(Developers) How do I get a JSON list of user-settings?</h2>
       <p>
         Fetch{' '}
         <a href="https://aubg.nora.lgbt/api/vars.json">
