@@ -11,14 +11,26 @@ class ProfileContent extends Component<{
   authTokenType: string;
 }> {
   async render() {
-    const user = await fetch(
-      '/api/whoamireally?auth=' +
-        this.props.authTokenType +
-        ' ' +
-        this.props.authCode,
-      {}
+    const user = await (
+      await fetch(
+        '/api/whoamireally?auth=' +
+          this.props.authTokenType +
+          ' ' +
+          this.props.authCode,
+        {}
+      )
+    ).json();
+    return (
+      <div>
+        <h1>
+          <img
+            src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
+            alt=""
+          />
+          Logged into: {user.name}#{user.discriminator}
+        </h1>
+      </div>
     );
-    return <div></div>;
   }
 }
 
