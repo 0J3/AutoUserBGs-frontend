@@ -1,44 +1,53 @@
-import { FunctionalComponent, h } from 'preact';
+import { Component, FunctionalComponent, h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import style from './style.css';
 
 interface Props {
-    user: string;
+  user: string;
+}
+
+class ProfileContent extends Component<{
+  authCode: string;
+  authTokenType: string;
+}> {
+  render() {
+    return <div></div>;
+  }
 }
 
 const Profile: FunctionalComponent<Props> = (props: Props) => {
-    const { user } = props;
-    const [time, setTime] = useState<number>(Date.now());
-    const [count, setCount] = useState<number>(0);
+  // const { user } = props;
+  // const [time, setTime] = useState<number>(Date.now());
+  // const [count, setCount] = useState<number>(0);
 
-    // gets called when this route is navigated to
-    useEffect(() => {
-        const timer = window.setInterval(() => setTime(Date.now()), 1000);
+  // gets called when this route is navigated to
+  // useEffect(() => {
+  //   const timer = window.setInterval(() => setTime(Date.now()), 1000);
 
-        // gets called just before navigating away from the route
-        return (): void => {
-            clearInterval(timer);
-        };
-    }, []);
+  //   // gets called just before navigating away from the route
+  //   return (): void => {
+  //     clearInterval(timer);
+  //   };
+  // }, []);
 
-    // update the current time
-    const increment = (): void => {
-        setCount(count + 1);
-    };
+  // update the current time
+  // const increment = (): void => {
+  //   setCount(count + 1);
+  // };
 
+  const acode = localStorage.getItem('AUTH_CODE');
+  const att = localStorage.getItem('AUTH_TOKEN_TYPE');
+
+  if (acode && att)
     return (
-        <div class={style.profile}>
-            <h1>Profile: {user}</h1>
-            <p>This is the user profile for a user named {user}.</p>
-
-            <div>Current time: {new Date(time).toLocaleString()}</div>
-
-            <p>
-                <button onClick={increment}>Click Me</button> Clicked {count}{' '}
-                times.
-            </p>
-        </div>
+      <div class={style.profile}>
+        <ProfileContent authCode={acode} authTokenType={att} />
+      </div>
     );
+  else {
+    if (typeof window !== 'undefined') document.location.replace('/api/login');
+    return <div></div>;
+  }
 };
 
 export default Profile;
