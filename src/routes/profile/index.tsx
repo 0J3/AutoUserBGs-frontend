@@ -7,7 +7,7 @@ interface Props {
   success?: boolean;
 }
 
-const testEnv = true;
+const testEnv = [false][0];
 
 class ProfileContent extends Component<
   {
