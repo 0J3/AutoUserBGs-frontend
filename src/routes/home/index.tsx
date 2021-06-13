@@ -13,8 +13,8 @@ const Home: FunctionalComponent = () => {
             fontSize: '0.5em',
           }}
         >
-          &nbsp;Have your own "user background" on BD/Powercord without the need
-          to wait.
+          :&nbsp;Have your own "user background" on BD/Powercord without the
+          need to wait.
         </span>
       </h1>
       <h2>Introduction</h2>
@@ -38,9 +38,71 @@ const Home: FunctionalComponent = () => {
         </a>{' '}
         already imports it for you.
       </p>
-      <h2>How do I get started?</h2>
+      <h2>How do I install AUBGs?</h2>
       <p>
-        Just click the link <a href="/profile">here</a>.
+        On Bandagedbd,...
+        <ol>
+          <li>
+            Download the .theme.css file by going
+            <a
+              href="#/api/bd"
+              onClick={() => (document.location.href = '/api/bd')}
+            >
+              here
+            </a>{' '}
+            and pressing ctrl+s
+          </li>
+          <li>Open your User Settings on Discord</li>
+          <li>Click Themes</li>
+          <li>Click Open Themes Folder</li>
+          <li>Move the file you downloaded in the opened folder</li>
+        </ol>
+        On PowerCord,...
+        <ol>
+          <li>
+            Download the .zip file by going
+            <a
+              href="#/api/bd"
+              onClick={() => (document.location.href = '/api/bd')}
+            >
+              here
+            </a>{' '}
+            and pressing ctrl+s
+          </li>
+          <li>Open your User Settings on Discord</li>
+          <li>Click Themes</li>
+          <li>Click Open Themes Folder</li>
+          <li>Move the file you downloaded in the opened folder</li>
+        </ol>
+      </p>
+      <h2>How do I setup my own background?</h2>
+      <p>
+        Just click the link <a href="/profile">here</a> and follow the
+        instructions there.
+      </p>
+      <h2>Why do you ask for email permissions?</h2>
+      <p>
+        I need to tell discord i need it, so discord tells me if it's verified
+        or not. I will be using that in the future to prevent non-verified
+        accounts. I do not keep your email address anywhere on my server.
+        <br />
+        If you want to confirm that claim yourself, this whole site's source
+        code, inclusive the part that would save said email, can be found
+        <a href="https://nora.lgbt/goto/gh/0J3/AutoUserBGs-frontend">
+          here
+        </a>{' '}
+        and <a href="https://nora.lgbt/goto/gh/0J3/AutoUserBGsBackend">here.</a>
+      </p>
+      <h2>(Developers) How do I get a JSON list of user-settings</h2>
+      <p>
+        Fetch{' '}
+        <a href="https://aubg.nora.lgbt/api/vars.json">
+          https://aubg.nora.lgbt/api/vars.json
+        </a>
+        , parse it as JSON, and loop over every entry. Each key is a userid, and
+        the value is an array of data. The key within that value, that you
+        likely are interested in, is <code>banner</code>. It is the same string
+        inputted <a href="/profile">here</a>.
       </p>
     </div>
   );
