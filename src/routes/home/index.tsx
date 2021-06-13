@@ -28,7 +28,7 @@ const Home: FunctionalComponent = () => {
         AUBG does not require you to wait to get a user background
         added/updated.
       </p>
-      <h2>Example</h2>
+      <h2>Examples</h2>
       <img
         src="https://cdn.discordapp.com/attachments/683385530528039165/853671336064581662/unknown.png"
         alt="EXAMPLE1"
