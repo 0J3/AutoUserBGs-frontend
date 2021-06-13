@@ -5,18 +5,16 @@ const Home: FunctionalComponent = () => {
   if (typeof document !== 'undefined') document.title = 'AutoUserBGs';
   return (
     <div class={style.home}>
-      <h1>
-        AutoUserBGs
-        <span
-          style={{
-            fontWeight: 100,
-            fontSize: '0.5em',
-          }}
-        >
-          :&nbsp;Have your own "user background" on BD/Powercord without the
-          need to wait.
-        </span>
-      </h1>
+      <h1>AutoUserBGs</h1>
+      <span
+        style={{
+          fontWeight: 100,
+          fontSize: '0.5em',
+        }}
+      >
+        Have your own "user background" on BD/Powercord without the need to wait
+        for approval.
+      </span>
       <h2>Introduction</h2>
       <p>
         AutoUserBGs (also refrenced as: aubg,aubgs,autousrbgs) is a Pure CSS
