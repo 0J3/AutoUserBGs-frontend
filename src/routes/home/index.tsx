@@ -9,7 +9,7 @@ const Home: FunctionalComponent = () => {
       <span
         style={{
           fontWeight: 100,
-          fontSize: '0.5em',
+          fontSize: '1.1em',
         }}
       >
         Have your own "user background" on BD/Powercord without the need to wait
@@ -85,7 +85,8 @@ const Home: FunctionalComponent = () => {
         accounts. I do not keep your email address anywhere on my server.
         <br />
         If you want to confirm that claim yourself, this whole site's source
-        code, inclusive the part that would save said email, can be found{' '}
+        code, inclusive the part that would be able to save said email, can be
+        found{' '}
         <a href="https://nora.lgbt/goto/gh/0J3/AutoUserBGs-frontend">
           here
         </a>{' '}
@@ -102,6 +103,39 @@ const Home: FunctionalComponent = () => {
           <li>
             If you upload userbgs for more than 5 of your own accounts, they
             will all be removed.
+          </li>
+        </ol>
+      </p>
+      <h2>(Theme Creators) How do I import it into my own theme?</h2>
+      <p>
+        There are 3 methods:
+        <ol>
+          <li>
+            <h3>
+              Import the variables and automatically add the user background
+            </h3>
+            To do this, add{' '}
+            <code>@import url('https://aubg.nora.lgbt/api/bd');</code> to the
+            beginning of your theme file (even for Powercord themes) <br />
+            Please note that this will NOT work if you use a custom background
+            system (and get rid of the default one)
+          </li>
+          <li>
+            <h3>
+              Import the variables from AutoUserBGs and from Aurora's legacy
+              background variable list
+            </h3>
+            To do this, add{' '}
+            <code>
+              @import url('https://0j3-2.github.io/AutoUserBGs/publicvars.css');
+            </code>{' '}
+            to the beginning of your theme file
+          </li>
+          <li>
+            <h3>Import the variables from only AutoUserBGs</h3>
+            To do this, add{' '}
+            <code>@import url('https://aubg.nora.lgbt/vars.css');</code> to the
+            beginning of your theme file
           </li>
         </ol>
       </p>
