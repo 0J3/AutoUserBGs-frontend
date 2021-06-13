@@ -151,7 +151,7 @@ const Profile: FunctionalComponent<Props> = (props: Props) => {
       <ProfileContent
         authCode={acode}
         authTokenType={att || 'Bearer'}
-        success
+        success={success}
       />
     );
   else {
