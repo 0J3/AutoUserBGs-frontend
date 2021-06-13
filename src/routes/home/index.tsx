@@ -33,6 +33,7 @@ const Home: FunctionalComponent = () => {
         src="https://cdn.discordapp.com/attachments/683385530528039165/853671336064581662/unknown.png"
         alt="EXAMPLE1"
       />
+      <br />
       <img
         src="https://cdn.discordapp.com/attachments/683385530528039165/853671368621293578/unknown.png"
         alt="EXAMPLE2"
