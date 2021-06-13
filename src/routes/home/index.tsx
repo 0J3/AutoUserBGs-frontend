@@ -36,7 +36,7 @@ const Home: FunctionalComponent = () => {
         </a>{' '}
         already imports it for you.
       </p>
-      <h2>How do I install AUBGs?</h2>
+      <h2>How do I install AutoUsrBGs?</h2>
       <p>
         On Bandagedbd,...
         <ol>
