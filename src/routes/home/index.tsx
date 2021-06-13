@@ -19,12 +19,29 @@ const Home: FunctionalComponent = () => {
       </h1>
       <h2>Introduction</h2>
       <p>
-        AutoUserBGs is a Pure CSS Database, similar to{' '}
+        AutoUserBGs (also refrenced as: aubg,aubgs,autousrbgs) is a Pure CSS
+        Database, similar to{' '}
         <a href="https://github.com/Discord-Custom-Covers/usrbg/">usrbg</a> by
         Tropical#4355, of user-selected backgrounds. The difference being, there
         is no human other than you, when it comes to approving backgrounds.
       </p>
-      <h2></h2>
+      <h2>Why AutoUsrBGs?</h2>
+      <p>
+        AUBG does not require you to wait to get a user background
+        added/updated.
+      </p>
+      <h2>Do I need to import UsrBGs aswell?</h2>
+      <p>
+        No. AutoUsrBGs'{' '}
+        <a href="https://0j3-2.github.io/AutoUserBGs/publicvars.css">
+          Variables importer file
+        </a>{' '}
+        already imports it for you.
+      </p>
+      <h2>How do I get started?</h2>
+      <p>
+        Just click the link <a href="/api/login">here</a>.
+      </p>
     </div>
   );
 };
