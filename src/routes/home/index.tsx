@@ -103,6 +103,12 @@ const Home: FunctionalComponent = () => {
         the value is an array of data. The key within that value, that you
         likely are interested in, is <code>banner</code>. It is the same string
         inputted <a href="/profile">here</a>.
+        <br />
+        Note: You cannot request this from the browser using{' '}
+        <code>fetch()</code>, as there is an issue with CORS. You can, instead,
+        have a proxy server to proxy to that file.
+        <br />
+        Node-fetch/Axios/etc... can still get the file just fine.
       </p>
     </div>
   );
