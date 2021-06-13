@@ -110,6 +110,20 @@ const Home: FunctionalComponent = () => {
         <br />
         Node-fetch/Axios/etc... can still get the file just fine.
       </p>
+      <h2>Restrictions</h2>
+      <p>
+        <ol>
+          <li>
+            If you post any form of explicit content, your background will be
+            removed without warning, and your UserID will be blocked from
+            submitting further backgrounds.
+          </li>
+          <li>
+            If you upload userbgs for more than 5 of your own accounts, they
+            will all be removed.
+          </li>
+        </ol>
+      </p>
     </div>
   );
 };
