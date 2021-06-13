@@ -3,40 +3,127 @@ import { useEffect, useState } from 'preact/hooks';
 import style from './style.css';
 
 interface Props {
-  user: string;
+  // user: string;
+  success?: boolean;
 }
 
-class ProfileContent extends Component<{
-  authCode: string;
-  authTokenType: string;
-}> {
-  async render() {
-    const user = await (
-      await fetch(
-        '/api/whoamireally?auth=' +
-          this.props.authTokenType +
-          ' ' +
-          this.props.authCode,
-        {}
-      )
-    ).json();
-    console.log(user);
+const testEnv = true;
 
+class ProfileContent extends Component<
+  {
+    authCode: string;
+    authTokenType: string;
+    success?: boolean;
+  },
+  {
+    user: {
+      username: string;
+      id: number | string;
+      discriminator: number | string;
+      avatar: string;
+    };
+    banner: string;
+  }
+> {
+  constructor() {
+    super();
+
+    this.state = {
+      user: {
+        id: 0,
+        avatar: '',
+        discriminator: 1000,
+        username: 'Waiting for server',
+      },
+      banner: '',
+    };
+  }
+  render() {
     return (
-      <div>
+      <div class={style.profile}>
+        <img
+          src={
+            this.state.user.id == 0
+              ? ''
+              : `https://cdn.discordapp.com/avatars/${this.state.user.id}/${this.state.user.avatar}`
+          }
+          alt=""
+        />
         <h1>
-          <img
-            src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
-            alt=""
-          />
-          Logged into: {user.name}#{user.discriminator}
+          &nbsp;{this.state.user.username}#{this.state.user.discriminator}
         </h1>
+        <form
+          action={
+            (testEnv == true ? 'http://localhost:5500/' : `/api/`) +
+            `setUserBanner/${this.props.authTokenType} ${this.props.authCode}`
+          }
+          method="post"
+        >
+          Banner Image: https://cdn.discordapp.com/
+          <input
+            type="text"
+            name="url"
+            id="url"
+            class={style.url}
+            placeholder="attachments/819934389516763146/853539221747138609/unknown.png"
+            value={this.state.banner}
+          />
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+        {this.props.success ? (
+          <p
+            style={{
+              color: '#00ff00',
+            }}
+          >
+            Successfully set the URL.
+            <br />
+            Please wait up to a minute for the styles to update.
+            <br />
+            Note: You must reload your discord for it to update
+          </p>
+        ) : (
+          ''
+        )}
       </div>
     );
+  }
+  componentWillMount() {
+    fetch(
+      (testEnv == true
+        ? 'http://localhost:5500/whoamireally'
+        : '/api/whoamireally') +
+        '?auth=' +
+        this.props.authTokenType +
+        ' ' +
+        this.props.authCode,
+      {}
+    ).then(async r => {
+      const user = await r.json();
+      this.setState({
+        user,
+        banner: '',
+      });
+
+      fetch(
+        testEnv == true
+          ? 'http://localhost:5500/getBanner/' + user.id
+          : '/api/getBanner/' + user.id,
+        {}
+      ).then(async r => {
+        const { banner } = await r.json();
+        this.setState({
+          user,
+          banner,
+        });
+      });
+    });
   }
 }
 
 const Profile: FunctionalComponent<Props> = (props: Props) => {
+  const { success } = props;
   // const { user } = props;
   // const [time, setTime] = useState<number>(Date.now());
   // const [count, setCount] = useState<number>(0);
@@ -61,9 +148,11 @@ const Profile: FunctionalComponent<Props> = (props: Props) => {
 
   if (acode)
     return (
-      <div class={style.profile}>
-        <ProfileContent authCode={acode} authTokenType={att || 'Bearer'} />
-      </div>
+      <ProfileContent
+        authCode={acode}
+        authTokenType={att || 'Bearer'}
+        success
+      />
     );
   else {
     if (typeof window !== 'undefined') document.location.replace('/api/login');

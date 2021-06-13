@@ -1,5 +1,24 @@
 .profile {
-	padding: 56px 20px;
-	min-height: 100%;
-	width: 100%;
+  padding: 56px 20px;
+  min-height: 100%;
+  width: 100%;
+}
+.profile img {
+  height: 3em;
+  border-radius: 100%;
+  display: inline-block;
+  margin-top: 21.44px;
+}
+.profile h1 {
+  display: inline-block;
+  margin: 0 0;
+  position: relative;
+  top: -10px;
+}
+.url {
+  background: #0000;
+  border: none;
+  color: #fff;
+  min-width: 55vw;
+  max-width: 95vw;
 }
