@@ -40,11 +40,7 @@ const Home: FunctionalComponent = () => {
       </p>
       <h2>How do I get started?</h2>
       <p>
-        Just click the link{' '}
-        <a href="/api/login" target="_blank">
-          here
-        </a>
-        .
+        Just click the link <a href="/profile">here</a>.
       </p>
     </div>
   );
