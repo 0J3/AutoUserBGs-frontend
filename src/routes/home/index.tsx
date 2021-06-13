@@ -93,6 +93,20 @@ const Home: FunctionalComponent = () => {
         </a>{' '}
         and <a href="https://nora.lgbt/goto/gh/0J3/AutoUserBGsBackend">here.</a>
       </p>
+      <h2>Restrictions</h2>
+      <p>
+        <ol>
+          <li>
+            If you post any form of explicit content, your background will be
+            removed without warning, and your UserID will be blocked from
+            submitting further backgrounds.
+          </li>
+          <li>
+            If you upload userbgs for more than 5 of your own accounts, they
+            will all be removed.
+          </li>
+        </ol>
+      </p>
       <h2>(Developers) How do I get a JSON list of user-settings?</h2>
       <p>
         Fetch{' '}
@@ -110,19 +124,17 @@ const Home: FunctionalComponent = () => {
         <br />
         Node-fetch/Axios/etc... can still get the file just fine.
       </p>
-      <h2>Restrictions</h2>
+      <h2>
+        (Developers) How do I get a specific user's background, without getting
+        all users' backgrounds?
+      </h2>
       <p>
-        <ol>
-          <li>
-            If you post any form of explicit content, your background will be
-            removed without warning, and your UserID will be blocked from
-            submitting further backgrounds.
-          </li>
-          <li>
-            If you upload userbgs for more than 5 of your own accounts, they
-            will all be removed.
-          </li>
-        </ol>
+        Same thing as before, just this time the link is{' '}
+        <a href="https://aubg.nora.lgbt/api/getBanner/596425713347723269">
+          https://aubg.nora.lgbt/api/getBanner/:UserId
+        </a>
+        .<br />
+        Click the link to see how the response looks like.
       </p>
     </div>
   );
