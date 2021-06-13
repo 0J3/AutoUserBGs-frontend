@@ -20,6 +20,8 @@ class ProfileContent extends Component<{
         {}
       )
     ).json();
+    console.log(user);
+
     return (
       <div>
         <h1>
