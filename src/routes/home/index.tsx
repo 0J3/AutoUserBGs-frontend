@@ -2,7 +2,7 @@ import { FunctionalComponent, h } from 'preact';
 import style from './style.css';
 
 const Home: FunctionalComponent = () => {
-  if (document) document.title = 'AutoUserBGs';
+  if (typeof document !== 'undefined') document.title = 'AutoUserBGs';
   return (
     <div class={style.home}>
       <h1>
