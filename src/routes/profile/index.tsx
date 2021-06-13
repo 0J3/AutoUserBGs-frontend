@@ -84,7 +84,20 @@ class ProfileContent extends Component<
             Note: You must reload your discord for it to update
           </p>
         ) : (
-          ''
+          <div>
+            <h2>How to use</h2>
+            <p>
+              To use AutoUserBGs, you first need to upload an image to discord.
+            </p>
+            <p>
+              Then, you need to right click the image, and click{' '}
+              <code>Copy Link</code>
+            </p>
+            <p>
+              After that, paste it in the above, and remove the{' '}
+              <code>https://cdn.discordapp.com/</code> part
+            </p>
+          </div>
         )}
       </div>
     );
